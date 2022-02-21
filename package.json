@@ -1,0 +1,60 @@
+{
+  "name": "reactjs-google-search",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.8.0",
+    "eslint": "6.1.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "node-sass": "^4.14.1",
+    "prop-types": "latest",
+    "react": "^16.8.0",
+    "react-app-polyfill": "^1.0.1",
+    "react-dom": "^16.8.0",
+    "react-scripts": "3.2.0",
+    "typescript": "^3.3.3333"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "coverage": "npm test -- --watchAll=false --coverage --coverageDirectory=coverage --reporters=jest-junit",
+    "lint": "eslint src/**/*{.js,.jsx}",
+    "stylelint": "stylelint src/**/*.{css,scss}",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.jsx"
+    ]
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-react": "^7.12.4",
+    "istanbul": "^0.4.5",
+    "jest-junit": "^6.2.1",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^2.0.0",
+    "stylelint-scss": "^3.5.2",
+    "terser": "^3.14.1"
+  }
+}

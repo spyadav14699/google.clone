@@ -1,0 +1,27 @@
+# language setting
+language: node_js
+
+node_js:
+  - 10
+
+env:
+  global:
+    - JEST_JUNIT_OUTPUT=./shippable/testresults/results.xml
+
+build:
+  cache: true
+  cache_dir_list:
+    - $SHIPPABLE_BUILD_DIR/node_modules
+
+  ci:
+    # Production build test
+    - npm install --production
+    - npm run build
+    # Code style check and running tests
+    - npm install
+    - npm run lint
+    - npm run stylelint
+    - npm run coverage
+    - mkdir -p shippable/codecoverage
+    - ./node_modules/.bin/istanbul report --include=coverage\coverage-final.json --dir=coverage cobertura
+    - mv coverage/cobertura-coverage.xml shippable/codecoverage/coverage.xml
